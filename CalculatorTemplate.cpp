@@ -4,11 +4,50 @@
 #include <iostream>
 using namespace std;
 
+class Arithmetic {
+private:
+	int number1;
+	int number2;
+public:
+	Arithmetic(int number1, int number2)
+	{
+		this->number1 = number1;
+		this->number2 = number2;
+	}
+	int add()
+	{
+		int num;
+		num = number1 + number2;
+		return num;
+	}
+	int subtract()
+	{
+		int num;
+		num = number1 - number2;
+		return num;
+	}
+	int multiply()
+	{
+		int num;
+		num = number1 * number2;
+		return num;
+	}
+	double divide()
+	{
+		double num;
+		num = number1 / number2;
+		return num;
+	}
 
+};
 int main()
 {
-	std::cout << "Hello World!\n";
-	return 0;
+	Arithmetic arithmetic(10, 5);
+	cout << "Add " << arithmetic.add() << endl;
+	cout << "Subtract " << arithmetic.subtract() << endl;
+	cout << "Multiply " << arithmetic.multiply() << endl;
+	cout << "Divide " << arithmetic.divide() << endl;
+	
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
