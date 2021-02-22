@@ -4,49 +4,55 @@
 #include <iostream>
 using namespace std;
 
-class Arithmetic {
+template<class T>
+class arithmetic {
 private:
-	int number1;
-	int number2;
+	T number1_;
+	T number2_;
 public:
-	Arithmetic(int number1, int number2);
-	int add();
-	int subtract();
-	int multiply();
-	double divide();
+	arithmetic(T number1, T number2);
+	T add();
+	T subtract();
+	T multiply();
+	T divide();
 
 };
-	Arithmetic::Arithmetic(int number1, int number2)
+	template<class T>
+	arithmetic<T>::arithmetic(T number1, T number2)
 	{
-		this->number1 = number1;
-		this->number2 = number2;
+		number1_ = number1;
+		number2_ = number2;
 	}
-	int Arithmetic::add()
+	template<class T>
+	T arithmetic<T>::add()
 	{
-		int num = number1 + number2;
+		T num = number1_ + number2_;
 		return num;
 	}
-	int Arithmetic::subtract()
+	template<class T>
+	T arithmetic<T>::subtract()
 	{
-		int num;
-		num = number1 - number2;
+		T num;
+		num = number1_ - number2_;
 		return num;
 	}
-	int Arithmetic::multiply()
+	template<class T>
+	T arithmetic<T>::multiply()
 	{
-		int num;
-		num = this->number1 * number2;
+		T num;
+		num = number1_ * number2_;
 		return num;
 	}
-	double Arithmetic::divide()
+	template<class T>
+	T arithmetic<T>::divide()
 	{
-		double num;
-		num = number1 / number2;
+		T num;
+		num = number1_ / number2_;
 		return num;
 	}
 int main()
 {
-	Arithmetic arithmetic(45, 122);
+	arithmetic<float> arithmetic(45, 122);
 	cout << "Add " << arithmetic.add() << endl;
 	cout << "Subtract " << arithmetic.subtract() << endl;
 	cout << "Multiply " << arithmetic.multiply() << endl;
