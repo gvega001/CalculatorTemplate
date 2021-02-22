@@ -9,54 +9,49 @@ private:
 	int number1;
 	int number2;
 public:
-	Arithmetic(int number1, int number2)
+	Arithmetic(int number1, int number2);
+	int add();
+	int subtract();
+	int multiply();
+	double divide();
+
+};
+	Arithmetic::Arithmetic(int number1, int number2)
 	{
 		this->number1 = number1;
 		this->number2 = number2;
 	}
-	int add()
+	int Arithmetic::add()
 	{
-		int num;
-		num = number1 + number2;
+		int num = number1 + number2;
 		return num;
 	}
-	int subtract()
+	int Arithmetic::subtract()
 	{
 		int num;
 		num = number1 - number2;
 		return num;
 	}
-	int multiply()
+	int Arithmetic::multiply()
 	{
 		int num;
-		num = number1 * number2;
+		num = this->number1 * number2;
 		return num;
 	}
-	double divide()
+	double Arithmetic::divide()
 	{
 		double num;
 		num = number1 / number2;
 		return num;
 	}
-
-};
 int main()
 {
-	Arithmetic arithmetic(10, 5);
+	Arithmetic arithmetic(45, 122);
 	cout << "Add " << arithmetic.add() << endl;
 	cout << "Subtract " << arithmetic.subtract() << endl;
 	cout << "Multiply " << arithmetic.multiply() << endl;
 	cout << "Divide " << arithmetic.divide() << endl;
+
+		return 0;
 	
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
